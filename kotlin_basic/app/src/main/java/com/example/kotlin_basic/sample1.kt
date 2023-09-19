@@ -1,21 +1,46 @@
 package com.example.kotlin_basic
 fun main() {
-//     hellow();
-    val x = add(1,2); // const
-    println(x);
+//    hellow();
+//    val x = add(1,2); // const
+//    println(x);
+//
+//    var y = Int;
+//    var y = 1; // variable
+//    println(y);
+//    y = add(4,5);
+//
+//    println("x is \$${x}, y is ${y}");
+//    println("x=y is true? ${x==y}");
+//
+//    println(" 4,5 max? ${maxBy(4,5)}");
+//    checkNum(11)
+//    array()
+    forAndWhile()
 
-//     var y = Int;
-    var y = 1; // variable
-    println(y);
-    y = add(4,5);
 
-    println("x is \$${x}, y is ${y}");
-    println("x=y is true? ${x==y}");
-
-    println(" 4,5 max? ${maxBy(4,5)}");
-    checkNum(11)
-    array()
-
+}
+fun forAndWhile(){
+    val stu = arrayListOf("tom","kim","son","na")
+//    for (n in stu){
+//        println("${n}")
+//    }
+//    for(i in 1..10) {
+//        println(i)
+//    }
+//    for(i in 10 downTo 1){
+//        println(i)
+//    }
+//    for(i in 1 until 3){
+//        println(i)
+//    }
+    var idx = 0
+//    while (idx <5){
+//        println("${idx + 1}번째 학생 : ${stu.get(idx)}")
+//        idx++
+//    }
+    for ((idx,name) in stu.withIndex()){
+        println("${idx + 1}번째 학생 : ${name}")
+    }
 }
 
 fun hellow() {
@@ -63,3 +88,4 @@ fun array(){
     arrList.add(20)
     arrList[0] = 20
 }
+
