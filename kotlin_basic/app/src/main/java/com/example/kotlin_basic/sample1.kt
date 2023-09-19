@@ -1,4 +1,7 @@
 package com.example.kotlin_basic
+
+import androidx.compose.ui.text.toUpperCase
+
 fun main() {
 //    hellow();
 //    val x = add(1,2); // const
@@ -15,10 +18,42 @@ fun main() {
 //    println(" 4,5 max? ${maxBy(4,5)}");
 //    checkNum(11)
 //    array()
-    forAndWhile()
+//    forAndWhile()
+    nullCheck()
+
+}
+
+fun nullCheck() {
+    var n = "park"
+//    var n1 = null
+    var nullName : String? = null // type에 ? 추가로 null 사용가능
+    var nameInUpperCase : String = n.toUpperCase()
+    var nullNameUpperCase : String? = nullName?.toUpperCase() // null 이면 null반환 / 아니면 실행
+//    println("nullName = ${nullName} , nullNameUpperCase = ${nullNameUpperCase} ")
+
+    // ?: xxx  > null일 경우 xxx 수행
+    val lastName = null
+    val fulltName = n +" "+ (lastName?: "None lastName")
+//    println(fulltName)
+
+    // !! 무시
+    fun ignoreNull(str:String?){
+        val notNull : String = str!! // str은 절대 null 값을 가지지 않는다고 선언
+        val strUpper = str.toUpperCase()
+//        println(strUpper)
+        val email : String?= null
+//            "xxx@naver.com"
+        email?.let{
+            println("email is ${email}")
+        }
+    }
+//    ignoreNull(null)
+    ignoreNull("hong")
+
 
 
 }
+
 fun forAndWhile(){
     val stu = arrayListOf("tom","kim","son","na")
 //    for (n in stu){
